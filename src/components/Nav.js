@@ -1,14 +1,29 @@
 function Nav() {
   return (
     <>
-      This is Nav
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Menu</li>
-        <li>Reservations</li>
-        <li>Order Online</li>
-        <li>Login</li>
+      <input className="menu-btn" type="checkbox" id="menu-btn" />
+      <label className="menu-icon" for="menu-btn">
+        <span className="navicon"></span>
+      </label>
+      <ul className="App-nav">
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a href="">About</a>
+        </li>
+        <li>
+          <a href="">Menu</a>
+        </li>
+        <li>
+          <a href="">Reservations</a>
+        </li>
+        <li>
+          <a href="">Order Online</a>
+        </li>
+        <li>
+          <a href="">Login</a>
+        </li>
       </ul>
     </>
   );
