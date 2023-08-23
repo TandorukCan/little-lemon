@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Nav() {
   return (
     <>
@@ -5,26 +6,26 @@ function Nav() {
       <label className="menu-icon" for="menu-btn">
         <span className="navicon"></span>
       </label>
-      <ul className="App-nav">
+      <nav className="App-nav">
         <li>
-          <a href="">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="">Menu</a>
+          <Link to="/specials">Menu</Link>
         </li>
         <li>
-          <a href="">Reservations</a>
+          <Link to="/highlights">Reservations</Link>
         </li>
         <li>
-          <a href="">Order Online</a>
+          <Link to="">Order Online</Link>
         </li>
         <li>
-          <a href="">Login</a>
+          <Link to="/testimonials">Login</Link>
         </li>
-      </ul>
+      </nav>
     </>
   );
 }
