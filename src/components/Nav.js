@@ -17,10 +17,10 @@ function Nav() {
           <Link to="/specials">Menu</Link>
         </li>
         <li>
-          <Link to="/highlights">Reservations</Link>
+          <Link to="/booking">Reservations</Link>
         </li>
         <li>
-          <Link to="">Order Online</Link>
+          <Link to="/highlights">Order Online</Link>
         </li>
         <li>
           <Link to="/testimonials">Login</Link>

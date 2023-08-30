@@ -8,13 +8,13 @@ import Testimonials from "./components/Testimonials";
 import Highlights from "./components/Highlights";
 import BookingPage from "./components/BookingPage";
 import { Routes, Route } from "react-router-dom";
-import { useReducer, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import { fetchAPI } from "./components/FakeApi";
 
 const timeReducer = (state, action) => {
   if (action.type === "DATE_INPUT") {
     console.log(action.val);
-    return { value: fetchAPI(new Date(action.val)) };
+    return { value: action.val };
   }
   return {
     value: state.val,
@@ -22,24 +22,52 @@ const timeReducer = (state, action) => {
 };
 
 function App() {
+  // let myDate;
+  // const [users, setUsers] = useState([]);
+  // const bookings = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+
+  // const initializeTimes = () => {
+  //   return { value: bookings, date: "" };
+  // };
+  // const [availableTimes, setAvailableTimes] = useState(bookings);
   const [availableTimes, dispatchAvailableTimes] = useReducer(timeReducer, {
     value: [],
   });
 
-  const handleDateChange = (e) => {
-    dispatchAvailableTimes({ type: "DATE_INPUT", val: e });
-  };
+  // useEffect(() => {
+  //   const identifier = setTimeout(() => {
+  //     console.log("Checking Form Validity");
+  //     setFormIsValid(emailState.isValid && passwordState.isValid);
+  //   }, 500);
+  //   return () => {
+  //     console.log("Cleanup");
+  //     clearTimeout(identifier);
+  //   };
+  // }, [availableTimes]);
 
-  useEffect(() => {
-    // const identifier = setTimeout(() => {
-    //   console.log("Checking Form Validity");
-    //   setFormIsValid(emailState.isValid && passwordState.isValid);
-    // }, 500);
-    return () => {
-      console.log("Cleanup");
-      // clearTimeout(identifier);
-    };
-  }, [availableTimes]);
+  const handleDateChange = (e) => {
+    dispatchAvailableTimes({ type: "DATE_INPUT", val: fetchAPI(new Date(e)) });
+    console.log(e);
+    console.log(fetchAPI(new Date(e)));
+  };
+  // const fetchUserData = () => {
+  //   fetchAPI(myDate)
+  //     // (
+  //     //   "https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js"
+  //     // )
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setUsers(data);
+  //     });
+  //   console.log(users[1]);
+  // };
+
+  // useEffect(() => {
+  //   fetchUserData();
+  //   console.log(users);
+  // }, [myDate]);
 
   // Upon receiving the date with the fetch api above,
   // update the responsible components state with it.
