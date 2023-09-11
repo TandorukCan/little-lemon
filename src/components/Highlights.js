@@ -1,19 +1,22 @@
 import restaurantfood from "../assets/restaurantfood.jpg";
+import { Link } from "react-router-dom";
 
 function Highlighs() {
   return (
-    <div className="Highlights">
-      <div>
+    <section className="Highlights">
+      <article>
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
         <p>
           "We are a family owned Mediterranean restaurant, focused on
           traditional recipes served with a modern twist."
         </p>
-        <button>Reserve a table</button>
-      </div>
+        <Link to="/booking">
+          <button>Reserve a table</button>
+        </Link>
+      </article>
       <img src={restaurantfood} alt="" />
-    </div>
+    </section>
   );
 }
 export default Highlighs;

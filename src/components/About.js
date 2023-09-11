@@ -2,8 +2,8 @@ import marioAndAdrian from "../assets/MarioandAdrianA.jpg";
 
 function About() {
   return (
-    <div className="About">
-      <div>
+    <section className="About">
+      <article>
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
         <p>
@@ -13,9 +13,9 @@ function About() {
           ullamco est sit aliqua dolor do amet sint. Velit officia consequat
           duis enim velit mollit.{" "}
         </p>
-      </div>
+      </article>
       <img src={marioAndAdrian} alt="" />
-    </div>
+    </section>
   );
 }
 export default About;

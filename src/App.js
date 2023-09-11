@@ -7,13 +7,15 @@ import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import Highlights from "./components/Highlights";
 import BookingPage from "./components/BookingPage";
-import { Routes, Route } from "react-router-dom";
-import { useReducer, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+
+import { useReducer } from "react";
 import { fetchAPI } from "./components/FakeApi";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 
 const timeReducer = (state, action) => {
   if (action.type === "DATE_INPUT") {
-    console.log(action.val);
+    console.log(fetchAPI(new Date(action.val)));
     return { value: fetchAPI(new Date(action.val)) };
   }
   return {
@@ -22,24 +24,31 @@ const timeReducer = (state, action) => {
 };
 
 function App() {
+  const navigate = useNavigate();
   const [availableTimes, dispatchAvailableTimes] = useReducer(timeReducer, {
-    value: [],
+    value: null,
+    // fetchAPI(new Date()),
   });
 
   const handleDateChange = (e) => {
     dispatchAvailableTimes({ type: "DATE_INPUT", val: e });
   };
 
-  useEffect(() => {
-    // const identifier = setTimeout(() => {
-    //   console.log("Checking Form Validity");
-    //   setFormIsValid(emailState.isValid && passwordState.isValid);
-    // }, 500);
-    return () => {
-      console.log("Cleanup");
-      // clearTimeout(identifier);
-    };
-  }, [availableTimes]);
+  const submitForm = (formData) => {
+    if (
+      formData.time.value === "Select time" ||
+      !formData.guestNr.value ||
+      formData.occasion.value === "Select occasion"
+    ) {
+      console.log("An error has occured");
+      return;
+    } else {
+      console.log("booking has gone through");
+      console.log(formData.date.value);
+      console.log(formData.time.value);
+      navigate("/confirmation");
+    }
+  };
 
   // Upon receiving the date with the fetch api above,
   // update the responsible components state with it.
@@ -61,9 +70,11 @@ function App() {
             <BookingPage
               availableTimes={availableTimes.value}
               onDateChange={handleDateChange}
+              onSubmit={submitForm}
             />
           }
         />
+        <Route path="/confirmation" element={<ConfirmedBooking />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

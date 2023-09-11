@@ -21,7 +21,7 @@ body {
   flex-direction: column;
 }
 
-.App > div:nth-child(2) {
+.App > section:nth-child(2) {
   margin-top: 7vh;
 }
 
@@ -48,12 +48,60 @@ body {
   grid-area: head;
   text-align: start;
   margin-left: 7%;
+  display: flex;
+  align-items: center;
 }
-.Hero div p {
+.Hero p {
   width: 16em;
   margin-left: auto;
   margin-right: auto;
   text-align: start;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Hero h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Hero span {
+  color: #ee9972;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.Hero a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Hero .Food1 {
+  grid-area: food1;
+  padding: 5%;
+}
+
+.Hero .Food2 {
+  grid-area: food2;
+  padding: 5%;
+}
+.Hero .Food3 {
+  grid-area: food3;
+  padding: 5%;
+}
+
+.Hero .Order1 {
+  grid-area: order1;
+  padding: 3%;
+}
+
+.Hero .Order2 {
+  grid-area: order2;
+  padding: 3%;
+}
+.Hero .Order3 {
+  grid-area: order3;
+  padding: 3%;
 }
 
 .Testimonials {
@@ -81,7 +129,7 @@ body {
   justify-content: space-evenly;
 }
 
-.Testimonials div {
+.Testimonials figure {
   display: flex;
   justify-content: space-evenly;
 }
@@ -89,6 +137,8 @@ body {
 .Card2,
 .Card3,
 .Card4 {
+  display: flex;
+  justify-content: space-evenly;
   width: 20%;
   height: 15em;
   flex-direction: column;
@@ -96,14 +146,14 @@ body {
   padding: 1%;
   border-radius: 10%;
 }
-.Testimonials div h3 {
+.Testimonials h3 {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
 }
 
-.Testimonials div img {
+.Testimonials img {
   border-radius: 50%;
   width: 8vh;
   height: 8vh;
@@ -140,51 +190,6 @@ body {
   align-items: center;
 }
 
-.Hero h1 {
-  display: flex;
-  align-items: center;
-}
-
-.Hero h2 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.Hero span {
-  color: #ee9972;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.Hero p {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.Hero a {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.Hero .Food1 {
-  grid-area: food1;
-  padding: 5%;
-}
-
-.Hero .Food2 {
-  grid-area: food2;
-  padding: 5%;
-}
-.Hero .Food3 {
-  grid-area: food3;
-  padding: 5%;
-}
-
-.Hero .Order1 {
-  grid-area: order1;
-  padding: 3%;
-}
-
 .Order1 a,
 .Order2 a,
 .Order3 a {
@@ -197,15 +202,6 @@ body {
 .Order3 img {
   height: 20px;
   margin-left: 5px;
-}
-
-.Hero .Order2 {
-  grid-area: order2;
-  padding: 3%;
-}
-.Hero .Order3 {
-  grid-area: order3;
-  padding: 3%;
 }
 
 .Testimonials {
@@ -243,7 +239,7 @@ body {
   width: 220px;
   object-fit: cover;
 }
-.About div {
+.About article {
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -251,7 +247,7 @@ body {
   align-items: flex-start;
 }
 
-.About div h2 {
+.About h2 {
   margin-bottom: 40px;
 }
 
@@ -279,6 +275,7 @@ body {
   color: #edefee;
   font-size: 40px;
   font-weight: normal;
+  margin-bottom: 80px;
 }
 .Highlights p {
   font-size: 18px;
@@ -297,7 +294,7 @@ body {
   border-radius: 5%;
   position: relative;
 }
-.Highlights div {
+.Highlights article {
   width: 350px;
   display: flex;
   flex-direction: column;
@@ -305,13 +302,9 @@ body {
   align-items: flex-start;
 }
 
-.Highlights div h2 {
-  margin-bottom: 80px;
-}
-
 .App-footer {
   display: grid;
-  height: 60vh;
+  height: 50vh;
   grid-template-columns: 1fr 2fr 2fr 2fr;
   text-align: left;
   background-color: #495e57;
@@ -328,7 +321,7 @@ body {
   padding-bottom: 1em;
 }
 
-.App-footer div {
+.App-footer section {
   padding: 20% 10% 0 10%;
 }
 
@@ -413,6 +406,14 @@ body {
   padding: 5%;
 }
 
+.Logo-background {
+  padding: 20% 10% 0 10%;
+}
+
+.Logo-background img {
+  max-height: 100px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -461,18 +462,27 @@ body {
   outline: none;
 }
 
-.Highlights button:disabled {
-  background-color: #edefee;
-  border-color: rgba(27, 31, 35, 0.1);
-  color: rgba(255, 255, 255, 0.8);
-  cursor: default;
-}
-
 .Highlights button:active {
   color: #edefee;
   background-color: #495e57;
   border-color: #333333;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.Highlights button a {
+  text-decoration: none;
+  color: #333;
+}
+.Highlights button a:active {
+  text-decoration: none;
+  color: #edefee;
+}
+
+.Highlights button:disabled {
+  background-color: #edefee;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
 }
 
 .Hero button {
@@ -520,8 +530,10 @@ body {
 }
 
 .Hero button:hover {
-  background-color: #495e57;
-  color: #edefee;
+  background-color: #edefee;
+  color: black;
+  border: 1px solid #495e57;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
 
 .Hero button:focus {
@@ -539,6 +551,7 @@ body {
 .Hero button:active {
   background-color: #495e57;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+  color: #edefee;
 }
 
 /* .App-header {
@@ -602,6 +615,10 @@ body {
   padding: 21px 20px;
   /* border-right: 1px solid #edefee; */
   text-decoration: none;
+}
+
+.App-header li {
+  list-style-type: none;
 }
 
 .App-header li a:hover,
@@ -704,7 +721,7 @@ body {
     align-items: center;
   }
 
-  .Highlights div {
+  .Highlights article {
     align-items: center;
   }
 
@@ -723,17 +740,17 @@ body {
     text-align: center;
   }
 
-  .Order1,
-  .Order2,
-  .Order3 {
-    border-bottom: 1px solid gray;
-  }
-
   .Hero button {
     margin-left: 0%;
     margin-right: 0%;
     margin-top: 5%;
     margin-bottom: 5%;
+  }
+
+  .Order1,
+  .Order2,
+  .Order3 {
+    border-bottom: 1px solid gray;
   }
 
   .TestimonialGrid {
@@ -770,7 +787,7 @@ body {
     flex-direction: column-reverse;
   }
 
-  .About div {
+  .About article {
     padding-top: 5vh;
     align-items: center;
   }
@@ -790,7 +807,7 @@ body {
     padding-bottom: 10%;
   }
 
-  .App-footer div:not(:first-child) {
+  .App-footer section:not(:first-child) {
     width: 60%;
     border-bottom: 1px solid gray;
   }
@@ -803,7 +820,7 @@ body {
     width: auto;
   }
 }
-@media (min-width: 922px) {
+@media (min-width: 972px) {
   .App-header li {
     float: left;
   }
@@ -832,8 +849,8 @@ body {
 }
 
 .Form input,
-.Form p select {
-  width: 111px;
+.Form select {
+  width: 132px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -842,19 +859,34 @@ body {
   border-left: 1px solid #495e57;
 }
 
-.Form p {
-  color: #f4ce14;
+input#guests {
+  padding-left: 2px;
+  width: 128px;
+}
+
+input#res-date {
+  width: 131px;
+}
+
+/* .Form p, */
+.Form span {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
   font-size: 18px;
-  /* padding: 5px; */
   border-radius: 10px;
   background-color: #edefee;
   margin: 10px;
   color: #495e57;
+  flex-direction: row-reverse;
+}
+
+.Form label {
   padding-left: 5px;
-  /* padding-right: 5px; */
+  text-align: left;
+  width: 345px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .ReservationPage {
@@ -876,11 +908,9 @@ body {
   text-align: start;
 }
 
-.Form p input {
-  width: 100px;
-  /* text-align: end; */
-  padding-right: 8px;
-  padding-left: 2px;
+.Form input:hover,
+.Form select:hover {
+  cursor: pointer;
 }
 
 .Form #FormButton {
@@ -938,4 +968,41 @@ body {
   background-color: #495e57;
   border-color: #333333;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.Form .error-text {
+  flex-direction: row;
+  color: #b40e0e;
+  background: #495e57;
+  text-align: left;
+  padding: 0px 10px;
+  margin-left: 5px;
+  font-weight: bolder;
+}
+
+/* #date:checked,
+.Form span:focus,
+.Form .form-control:focus, */
+.Form input:focus + label,
+.Form input:focus,
+.Form select:focus,
+.Form select:focus + label {
+  outline: none;
+  border-color: #240370;
+  background-color: #c3bdfe;
+}
+
+.Form .form-control.invalid,
+.Form .form-control.invalid input,
+.Form .form-control.invalid select {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}
+
+.Form .form-control.invalid select:focus,
+.Form .form-control.invalid select:focus + label,
+.Form .form-control.invalid input:focus,
+.Form .form-control.invalid input:focus + label {
+  border-color: #ff8800;
+  background-color: #fbe8d2;
 }

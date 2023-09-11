@@ -5,10 +5,10 @@ import basket from "../assets/shopping-cart.png";
 
 function Hero() {
   return (
-    <div className="Hero">
+    <section className="Hero">
       <h1>This Weeks Specials!</h1>
-      <button role="button">Online Menu</button>
-      <div className="Food1">
+      <button>Online Menu</button>
+      <figure className="Food1">
         <img src={greekSalad} alt="Greek Salad" />
         <div>
           <h2>Greek Salad</h2>
@@ -20,12 +20,12 @@ function Hero() {
           Chicago style feta cheese, garnished with crunchy garlic and rosemary
           croutons."
         </p>
-      </div>
-      <div className="Order1">
-        <a href="">Order a delivery</a>
+      </figure>
+      <section className="Order1">
+        <a href="/">Order a delivery</a>
         <img src={basket} alt="Shopping Cart" />
-      </div>
-      <div className="Food2">
+      </section>
+      <figure className="Food2">
         <img src={bruchetta} alt="Bruchetta" />
         <div>
           <h2>Bruchetta</h2>
@@ -35,12 +35,12 @@ function Hero() {
           "Our Bruschetta is made from grilled bread that has been smeared with
           garlic and seasoned with salt and olive oil."
         </p>
-      </div>
-      <div className="Order2">
-        <a href="">Order a delivery</a>
+      </figure>
+      <section className="Order2">
+        <a href="/">Order a delivery</a>
         <img src={basket} alt="Shopping Cart" />
-      </div>
-      <div className="Food3">
+      </section>
+      <figure className="Food3">
         <img src={lemonDessert} alt="Lemon Dessert" />
         <div>
           <h2>Lemon Dessert</h2>
@@ -50,12 +50,12 @@ function Hero() {
           "This comes straight from grandma’s recipe book, every last ingredient
           has been sourced and is as authentic as can be imagined."
         </p>
-      </div>
-      <div className="Order3">
-        <a href="">Order a delivery</a>
+      </figure>
+      <section className="Order3">
+        <a href="/">Order a delivery</a>
         <img src={basket} alt="Shopping Cart" />
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }
 export default Hero;
