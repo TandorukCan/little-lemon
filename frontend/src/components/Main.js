@@ -1,4 +1,4 @@
-import Hero from "./Hero";
+import Specials from "./Specials";
 import Highlights from "./Highlights";
 
 function Main() {
@@ -9,7 +9,7 @@ function Main() {
         <Route path="/about" element={<About />}></Route>
       </Routes> */}
       <Highlights />
-      <Hero />
+      <Specials />
     </main>
   );
 }

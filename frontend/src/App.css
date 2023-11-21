@@ -30,28 +30,31 @@ body {
   flex-direction: column;
 }
 
-.Hero {
+.Specials {
   background-color: #edefee;
-  display: grid;
+  /* display: grid;
   grid-template-areas:
     "head head button"
-    "food1 food2 food3"
-    "order1 order2 order3";
-  grid-template-rows: auto 1fr auto;
-  padding: 10vh 3vh 10vh 3vh;
+    "food food food"
+    "order order order";
+  grid-template-rows: auto 1fr auto; */
+  display: flex;
+  justify-content: center;
+  /* padding: 10vh 3vh 10vh 3vh; */
 }
 
-.Hero h1 {
+.Specials h1,
+.SpecialsHeading h1 {
   font-family: "Markazi Text";
   font-size: 64px;
   font-weight: 500;
-  grid-area: head;
-  text-align: start;
-  margin-left: 7%;
-  display: flex;
-  align-items: center;
+  /* grid-area: head; */
+  /* text-align: start; */
+  /* margin-left: 7%; */
+  /* display: flex;
+  align-items: center; */
 }
-.Hero p {
+.Specials p {
   width: 16em;
   margin-left: auto;
   margin-right: auto;
@@ -60,46 +63,62 @@ body {
   font-weight: 400;
 }
 
-.Hero h2 {
+.SpecialsHeading {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+.Specials h2 {
   font-size: 20px;
   font-weight: bold;
 }
 
-.Hero span {
+.Specials span {
   color: #ee9972;
   font-size: 18px;
   font-weight: 500;
 }
 
-.Hero a {
+.Specials a {
   font-size: 16px;
   font-weight: bold;
 }
 
-.Hero .Food1 {
+.Specials .Food {
+  grid-area: food;
+  padding: 5%;
+}
+
+.Specials .Food1 {
   grid-area: food1;
   padding: 5%;
 }
 
-.Hero .Food2 {
+.Specials .Food2 {
   grid-area: food2;
   padding: 5%;
 }
-.Hero .Food3 {
+.Specials .Food3 {
   grid-area: food3;
   padding: 5%;
 }
 
-.Hero .Order1 {
+.Specials .Order {
+  grid-area: order;
+  padding: 3%;
+}
+
+.Specials .Order1 {
   grid-area: order1;
   padding: 3%;
 }
 
-.Hero .Order2 {
+.Specials .Order2 {
   grid-area: order2;
   padding: 3%;
 }
-.Hero .Order3 {
+.Specials .Order3 {
   grid-area: order3;
   padding: 3%;
 }
@@ -157,7 +176,7 @@ body {
   object-fit: cover;
   border: 1px solid black;
 }
-
+.Food div,
 .Food1 div,
 .Food2 div,
 .Food3 div {
@@ -168,6 +187,7 @@ body {
   margin: 10px auto 10px auto;
 }
 
+.Food img,
 .Food1 img,
 .Food2 img,
 .Food3 img {
@@ -178,6 +198,7 @@ body {
   border: solid 1px black;
 }
 
+.Food,
 .Food1,
 .Food2,
 .Food3 {
@@ -187,6 +208,7 @@ body {
   align-items: center;
 }
 
+.Order a,
 .Order1 a,
 .Order2 a,
 .Order3 a {
@@ -194,9 +216,11 @@ body {
   text-decoration: none;
 }
 
+.Order img,
 .Order1 img,
 .Order2 img,
 .Order3 img {
+  width: 20px;
   height: 20px;
   margin-left: 5px;
 }
@@ -482,7 +506,7 @@ body {
   cursor: default;
 }
 
-.Hero button {
+.SpecialsHeading button {
   /* font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
@@ -497,10 +521,12 @@ body {
   font-weight: bold;
   padding: 10px 22px;
   border-radius: 15px;
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
-  margin-bottom: 10%;
+  margin-bottom: 10%; */
+  margin-top: auto;
+  margin-bottom: auto;
   grid-area: button;
   appearance: none;
   background-color: #f4ce14;
@@ -521,31 +547,31 @@ body {
   white-space: nowrap;
 }
 
-.Hero button:focus:not(:focus-visible):not(.focus-visible) {
+.Specials button:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
   outline: none;
 }
 
-.Hero button:hover {
+.Specials button:hover {
   background-color: #edefee;
   color: black;
   border: 1px solid #495e57;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
 
-.Hero button:focus {
+.Specials button:focus {
   box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
   outline: none;
 }
 
-.Hero button:disabled {
+.Specials button:disabled {
   background-color: #495e57;
   border-color: rgba(27, 31, 35, 0.1);
   color: rgba(255, 255, 255, 0.8);
   cursor: default;
 }
 
-.Hero button:active {
+.Specials button:active {
   background-color: #495e57;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
   color: #edefee;
@@ -782,24 +808,32 @@ body {
     margin: 0%;
   }
 
-  .Hero {
+  .Specials {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .Hero h1 {
+  .SpecialsHeading {
+    flex-direction: column;
+  }
+  .SpecialsHeading button {
+    margin: 20px auto;
+  }
+
+  .Specials h1 {
     margin-left: 0%;
     text-align: center;
   }
 
-  .Hero button {
+  .Specials button {
     margin-left: 0%;
     margin-right: 0%;
     margin-top: 5%;
     margin-bottom: 5%;
   }
 
+  .Order,
   .Order1,
   .Order2,
   .Order3 {

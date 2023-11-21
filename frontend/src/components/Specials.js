@@ -2,13 +2,38 @@ import greekSalad from "../assets/greekSalad.jpg";
 import lemonDessert from "../assets/lemonDessert.jpg";
 import bruchetta from "../assets/bruchetta.svg";
 import basket from "../assets/shopping-cart.png";
+import { useEffect, useState } from "react";
 
-function Hero() {
+//components
+import SpecialDetails from "../components/SpecialDetails";
+
+function Specials() {
+  const [specials, setSpecials] = useState(null);
+  useEffect(() => {
+    const fetchSpecials = async () => {
+      const response = await fetch("/api/specials");
+      const json = await response.json();
+
+      if (response.ok) {
+        setSpecials(json);
+      }
+    };
+    fetchSpecials();
+  }, []);
+
   return (
-    <section className="Hero">
-      <h1>This Weeks Specials!</h1>
-      <button>Online Menu</button>
-      <figure className="Food1">
+    <>
+      <section className="SpecialsHeading">
+        <h1>This Weeks Specials!</h1>
+        <button>Online Menu</button>
+      </section>
+
+      <section className="Specials">
+        {specials &&
+          specials.map((special) => (
+            <SpecialDetails key={special._id} special={special} />
+          ))}
+        {/* <figure className="Food1">
         <img src={greekSalad} alt="Greek Salad" />
         <div>
           <h2>Greek Salad</h2>
@@ -54,8 +79,9 @@ function Hero() {
       <section className="Order3">
         <a href="/">Order a delivery</a>
         <img src={basket} alt="Shopping Cart" />
+      </section> */}
       </section>
-    </section>
+    </>
   );
 }
-export default Hero;
+export default Specials;
