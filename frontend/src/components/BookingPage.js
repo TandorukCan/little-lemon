@@ -31,18 +31,20 @@ function BookingPage(props) {
   return (
     <span className="ReservationPage">
       <h1>Reserve a table</h1>
-      <h2 hidden={!bookingTime || bookingTime === "Select time"}>
-        Time of Booking: {bookingTime}
-      </h2>
       {props.availableTimes && (
         <h2>Available times for {todaysTime} are as follows:</h2>
       )}
-      <ul>
+      <div class="box">
         {props.availableTimes &&
-          props.availableTimes
-            .filter((item) => item !== bookingTime)
-            .map((time) => <li style={{ display: "inline" }}>{time} </li>)}
-      </ul>
+          props.availableTimes.map((time) => (
+            <div className={time === bookingTime ? "activeBox" : ""}>
+              {time}
+            </div>
+          ))}
+      </div>
+      {/* <h2 hidden={!bookingTime || bookingTime === "Select time"}>
+        Time of Booking: {bookingTime}
+      </h2> */}
       <BookingForm
         availableTimes={props.availableTimes}
         onTimeChange={handleTimeChange}

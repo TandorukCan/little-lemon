@@ -14,6 +14,25 @@
 body {
   background-color: #edefee;
 }
+.box {
+  width: 471px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box > * {
+  margin: 5px 19px;
+  flex: 0 0 11.5%;
+  border: solid #495e57 1px;
+  border-radius: 15px;
+  background-color: #495e57;
+  color: #edefee;
+}
+
+.activeBox {
+  color: #495e57;
+  background-color: #f4ce14;
+  border-color: #f4ce14;
+}
 
 .App {
   text-align: center;
@@ -174,7 +193,7 @@ body {
   width: 8vh;
   height: 8vh;
   object-fit: cover;
-  border: 1px solid black;
+  border: 1px solid #edefee;
 }
 .Food div,
 .Food1 div,
@@ -195,7 +214,7 @@ body {
   border-top-left-radius: 10%;
   height: 176px;
   width: 265px;
-  border: solid 1px black;
+  border: solid 1px #edefee;
 }
 
 .Food,

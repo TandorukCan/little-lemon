@@ -1,7 +1,7 @@
-import greekSalad from "../assets/greekSalad.jpg";
-import lemonDessert from "../assets/lemonDessert.jpg";
-import bruchetta from "../assets/bruchetta.svg";
-import basket from "../assets/shopping-cart.png";
+// import greekSalad from "../assets/greekSalad.jpg";
+// import lemonDessert from "../assets/lemonDessert.jpg";
+// import bruchetta from "../assets/bruchetta.svg";
+// import basket from "../assets/shopping-cart.png";
 import { useEffect, useState } from "react";
 
 //components
